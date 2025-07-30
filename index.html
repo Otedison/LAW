@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Brown & Associates | Premier Legal Services in Nairobi, Kenya</title>
+    <meta name="description" content="Leading Nairobi law firm specializing in corporate law, litigation, real estate, and family law. Kenyan legal experts since 2015.">
+    
+    <!-- Preload and optimize critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --secondary: #e2b979;
+            --accent: #4a6fa5;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #38a169;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+            padding-top: 80px; /* For fixed navbar */
+        }
+        
+        /* Navigation Styles */
+        .navbar {
+            background-color: var(--primary);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background-color: rgba(26, 54, 93, 0.95) !important;
+        }
+        
+        .navbar-brand h2 {
+            font-weight: 700;
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after,
+        .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .dropdown-item {
+            padding: 0.5rem 1rem;
+            transition: all 0.2s ease;
+        }
+        
+        .dropdown-item:hover {
+            background-color: var(--light);
+            color: var(--primary);
+            padding-left: 1.25rem;
+        }
+        
+        /* Mega Menu Styles */
+        .mega-menu .dropdown-mega {
+            width: 100%;
+            left: 0;
+            padding: 1rem;
+        }
+        
+        .mega-menu:hover .dropdown-mega {
+            display: block !important;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('assets/nairobi-skyline.webp');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0;
+        }
+        
+        /* Button Styles */
+        .btn-primary {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            color: var(--primary);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Card Styles */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 8px;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(74, 111, 165, 0.1);
+        }
+        
+        .practice-area-card {
+            border-left: 4px solid var(--secondary);
+        }
+        
+        /* Client Portal */
+        .client-portal-box {
+            border: 1px solid rgba(226, 185, 121, 0.3);
+        }
+        
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        /* Compliance Badges */
+        .compliance-badges img {
+            height: 60px;
+            width: auto;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+        
+        .compliance-badges img:hover {
+            filter: grayscale(0%);
+        }
+        
+        /* Hover Effects */
+        .hover-effect {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-effect:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Emergency Button */
+        .emergency-btn {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                padding: 1rem;
+                background-color: var(--primary);
+                margin-top: 0.5rem;
+                border-radius: 0 0 8px 8px;
+            }
+            
+            .dropdown-menu {
+                background-color: rgba(0,0,0,0.1);
+                box-shadow: none;
+            }
+            
+            .dropdown-item {
+                color: rgba(255,255,255,0.8);
+            }
+            
+            .dropdown-item:hover {
+                background-color: rgba(255,255,255,0.1);
+                color: white;
+            }
+            
+            .hero {
+                padding: 100px 0;
+            }
+            
+            .display-3 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-2">
+        <div class="container">
+            <!-- Brand Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <div class="me-2">
+                    <i class="fas fa-balance-scale fa-2x text-warning"></i>
+                </div>
+                <div>
+                    <h2 class="mb-0">HARRY BROWN <span class="text-warning">& ASSOCIATES</span></h2>
+                    <p class="small mb-0">ADVOCATES | COMMISSIONERS FOR OATHS | LSK No. 12345</p>
+                </div>
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    
+                    <!-- About Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
+                            About
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="about.html">Our Firm</a></li>
+                            <li><a class="dropdown-item" href="harry-brown.html">Harry Brown</a></li>
+                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                            <li><a class="dropdown-item" href="values.html">Our Values</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Practice Areas Mega Menu -->
+                    <li class="nav-item dropdown mega-menu">
+                        <a class="nav-link dropdown-toggle" href="#" id="practiceDropdown" role="button" data-bs-toggle="dropdown">
+                            Practice Areas
+                        </a>
+                        <div class="dropdown-menu dropdown-mega" aria-labelledby="practiceDropdown">
+                            <div class="container">
+                                <div class="row g-4">
+                                    <div class="col-lg-4">
+                                        <div class="p-3">
+                                            <h6 class="text-primary mb-3">Corporate & Business</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item" href="corporate-law.html">Corporate Law</a></li>
+                                                <li><a class="dropdown-item" href="commercial-law.html">Commercial Law</a></li>
+                                                <li><a class="dropdown-item" href="mergers-acquisitions.html">Mergers & Acquisitions</a></li>
+                                                <li><a class="dropdown-item" href="tax-law.html">Tax Law</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="p-3">
+                                            <h6 class="text-primary mb-3">Dispute Resolution</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item" href="litigation.html">Civil Litigation</a></li>
+                                                <li><a class="dropdown-item" href="arbitration.html">Arbitration</a></li>
+                                                <li><a class="dropdown-item" href="mediation.html">Mediation</a></li>
+                                                <li><a class="dropdown-item" href="appellate.html">Appellate Practice</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="p-3">
+                                            <h6 class="text-primary mb-3">Specialized Practices</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a class="dropdown-item" href="real-estate-law.html">Real Estate Law</a></li>
+                                                <li><a class="dropdown-item" href="family-law.html">Family Law</a></li>
+                                                <li><a class="dropdown-item" href="criminal-defense.html">Criminal Defense</a></li>
+                                                <li><a class="dropdown-item" href="constitutional-law.html">Constitutional Law</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resources">Resources</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    
+                    <!-- Client Portal Button -->
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-warning text-dark fw-bold px-3 py-2" href="client-portal.html">
+                            <i class="fas fa-lock me-1"></i> Client Portal
+                        </a>
+                    </li>
+                    
+                    <!-- Emergency Contact (Mobile Only) -->
+                    <li class="nav-item d-lg-none mt-2">
+                        <a class="btn btn-danger w-100" href="tel:+254733987654">
+                            <i class="fas fa-phone-alt me-1"></i> Emergency
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Emergency Contact (Desktop Only) -->
+    <a class="btn btn-danger btn-lg shadow emergency-btn d-none d-lg-inline-flex align-items-center" href="tel:+254733987654">
+        <i class="fas fa-phone-alt me-1"></i> Emergency
+    </a>
+
+    <!-- Hero Section -->
+    <section class="hero text-center" data-aos="fade-in">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">Exceptional Legal Representation in Nairobi</h1>
+            <p class="lead mb-5">Providing strategic legal solutions with Kenyan expertise and global perspective</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="#contact" class="btn btn-primary btn-lg px-4 me-2">
+                    <i class="fas fa-calendar me-2"></i>Schedule Consultation
+                </a>
+                <a href="tel:+254700123456" class="btn btn-outline-light btn-lg px-4">
+                    <i class="fas fa-phone me-2"></i>+254 700 123 456
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Our Legal Services</h2>
+                <p class="lead">Comprehensive legal solutions tailored to your Kenyan context</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow-sm hover-effect practice-area-card">
+                        <div class="card-body">
+                            <div class="icon-box bg-primary-light mb-4">
+                                <i class="fas fa-briefcase fa-2x text-primary"></i>
+                            </div>
+                            <h4>Corporate & Commercial Law</h4>
+                            <p>Full-service business legal solutions:</p>
+                            <ul class="text-start ps-4">
+                                <li>Company formation & compliance</li>
+                                <li>Mergers & acquisitions</li>
+                                <li>Corporate governance</li>
+                                <li>Commercial contracts</li>
+                                <li>Regulatory compliance</li>
+                            </ul>
+                            <a href="corporate-law.html" class="btn btn-sm btn-outline-primary mt-2">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-0 shadow-sm hover-effect practice-area-card">
+                        <div class="card-body">
+                            <div class="icon-box bg-primary-light mb-4">
+                                <i class="fas fa-gavel fa-2x text-primary"></i>
+                            </div>
+                            <h4>Litigation & Dispute Resolution</h4>
+                            <p>Effective representation in Kenyan courts:</p>
+                            <ul class="text-start ps-4">
+                                <li>Civil & commercial litigation</li>
+                                <li>Alternative dispute resolution</li>
+                                <li>Debt recovery</li>
+                                <li>Appellate practice</li>
+                                <li>Arbitration</li>
+                            </ul>
+                            <a href="litigation.html" class="btn btn-sm btn-outline-primary mt-2">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 border-0 shadow-sm hover-effect practice-area-card">
+                        <div class="card-body">
+                            <div class="icon-box bg-primary-light mb-4">
+                                <i class="fas fa-home fa-2x text-primary"></i>
+                            </div>
+                            <h4>Real Estate & Property Law</h4>
+                            <p>Kenyan property transactions and disputes:</p>
+                            <ul class="text-start ps-4">
+                                <li>Title verification & due diligence</li>
+                                <li>Sale & purchase agreements</li>
+                                <li>Leases & tenancies</li>
+                                <li>Land disputes & succession</li>
+                                <li>Development agreements</li>
+                            </ul>
+                            <a href="real-estate.html" class="btn btn-sm btn-outline-primary mt-2">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="services.html" class="btn btn-primary px-4">
+                    <i class="fas fa-search me-2"></i>View All Practice Areas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <div class="position-relative">
+                        <img src="assets/harry-brown.webp" alt="Harry Brown, Advocate" class="img-fluid rounded shadow" loading="lazy" width="600" height="400">
+                        <div class="position-absolute bottom-0 start-0 bg-primary text-white p-3 rounded-end" style="width: 80%;">
+                            <h5 class="mb-0">15+ Years Legal Experience</h5>
+                            <p class="small mb-0">Practicing in Nairobi since 2008</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="fw-bold mb-4">About Harry Brown</h2>
+                    <p class="lead">Principal Partner at Harry Brown & Associates</p>
+                    <p>Harry Brown is a distinguished advocate with over 15 years of experience practicing law in Nairobi, Kenya. Admitted to the Kenyan Bar in 2008, Harry has built a reputation for excellence in legal representation and client service.</p>
+                    <p>After graduating with honors from the University of Nairobi School of Law, Harry began his career at one of Kenya's leading corporate law firms before establishing his own practice in 2015.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="d-flex mb-3">
+                                <i class="fas fa-graduation-cap text-primary me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-0">Education</h6>
+                                    <p class="small mb-0">LLB (Hons) - University of Nairobi<br>Postgraduate Diploma - Kenya School of Law</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex mb-3">
+                                <i class="fas fa-award text-primary me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="mb-0">Memberships</h6>
+                                    <p class="small mb-0">Law Society of Kenya<br>East African Law Society</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <a href="about.html" class="btn btn-primary me-2">
+                            <i class="fas fa-user-tie me-2"></i>Full Profile
+                        </a>
+                        <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#legalDisclaimer">
+                            <i class="fas fa-balance-scale me-2"></i>Legal Disclaimer
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Our Legal Team</h2>
+                <p class="lead">Dedicated professionals committed to your success</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="assets/team1.webp" class="card-img-top" alt="Senior Associate" loading="lazy">
+                        <div class="card-body text-center">
+                            <h5>Sarah Mwangi</h5>
+                            <p class="text-muted">Senior Associate</p>
+                            <p>Specializes in corporate law and commercial transactions. LLB (UoN), LLM (Harvard).</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#" class="text-primary"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="assets/team2.webp" class="card-img-top" alt="Litigation Partner" loading="lazy">
+                        <div class="card-body text-center">
+                            <h5>James Omondi</h5>
+                            <p class="text-muted">Litigation Partner</p>
+                            <p>Experienced trial attorney with over 50 successful cases. LLB (Moi), Dip. Law (KSL).</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#" class="text-primary"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="assets/team3.webp" class="card-img-top" alt="Constitutional Law Expert" loading="lazy">
+                        <div class="card-body text-center">
+                            <h5>Grace Wambui</h5>
+                            <p class="text-muted">Constitutional Law Expert</p>
+                            <p>Human rights advocate with extensive appellate experience. LLB (UoN), LLM (Georgetown).</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="#" class="text-primary"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="team.html" class="btn btn-outline-primary px-4">
+                    <i class="fas fa-users me-2"></i>Meet Full Team
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kenyan Legal Resources Section -->
+    <section id="resources" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Kenyan Legal Resources</h2>
+                <p class="lead">Helpful tools and information for our clients</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 h-100 shadow-sm hover-effect">
+                        <div class="card-body">
+                            <h5 class="d-flex align-items-center">
+                                <i class="fas fa-calculator text-primary me-3"></i>
+                                Court Fee Calculator
+                            </h5>
+                            <p>Estimate costs for filing cases in Kenyan courts based on the latest fee schedules.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Calculate Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 h-100 shadow-sm hover-effect">
+                        <div class="card-body">
+                            <h5 class="d-flex align-items-center">
+                                <i class="fas fa-book text-primary me-3"></i>
+                                Kenyan Law Library
+                            </h5>
+                            <p>Access key Kenyan statutes, regulations, and legal notices updated regularly.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">Browse Laws</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 h-100 shadow-sm hover-effect">
+                        <div class="card-body">
+                            <h5 class="d-flex align-items-center">
+                                <i class="fas fa-question-circle text-primary me-3"></i>
+                                Legal FAQs
+                            </h5>
+                            <p>Answers to common legal questions about Kenyan law and court procedures.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Results Section -->
+    <section id="results" class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Notable Case Results</h2>
+                <p class="lead">Recent successes for our clients in Kenyan courts</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-secondary rounded-circle p-3 me-3">
+                                    <i class="fas fa-briefcase fa-2x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Commercial Arbitration</h5>
+                                    <small class="text-white-50">High Court of Kenya</small>
+                                </div>
+                            </div>
+                            <p>Successfully represented a multinational corporation in a KSh 850 million commercial dispute, resulting in favorable settlement.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-light text-primary">Corporate Law</span>
+                                <small>2023</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-secondary rounded-circle p-3 me-3">
+                                    <i class="fas fa-home fa-2x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Land Dispute</h5>
+                                    <small class="text-white-50">Environment & Land Court</small>
+                                </div>
+                            </div>
+                            <p>Won a precedent-setting case protecting client's 50-acre property rights in Kajiado County against fraudulent claims.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-light text-primary">Real Estate</span>
+                                <small>2022</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-secondary rounded-circle p-3 me-3">
+                                    <i class="fas fa-users fa-2x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Family Law Appeal</h5>
+                                    <small class="text-white-50">Court of Appeal</small>
+                                </div>
+                            </div>
+                            <p>Successfully appealed a High Court decision, securing our client's rights to matrimonial property worth KSh 120 million.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-light text-primary">Family Law</span>
+                                <small>2023</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4" data-aos="fade-up">
+                <p class="small">* Case results depend on various factors and past results don't guarantee similar outcomes</p>
+                <a href="cases.html" class="btn btn-outline-light mt-2">
+                    <i class="fas fa-gavel me-2"></i>View More Case Results
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Client Testimonials</h2>
+                <p class="lead">What our clients say about our services</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="mb-3 text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="fst-italic">"Harry Brown's expertise in corporate law saved our business during a complex merger. His attention to detail and strategic thinking were invaluable. The team's understanding of Kenyan business regulations made all the difference."</p>
+                            <div class="d-flex align-items-center mt-3">
+                                <img src="assets/client1.webp" alt="Client" class="rounded-circle me-3" width="50" loading="lazy">
+                                <div>
+                                    <h6 class="mb-0">David Kamau</h6>
+                                    <small class="text-muted">CEO, Tech Solutions Africa</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="mb-3 text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="fst-italic">"The team at Harry Brown & Associates handled my divorce with compassion and professionalism. They achieved a fair settlement while minimizing conflict. Their knowledge of Kenyan family law was evident throughout the process."</p>
+                            <div class="d-flex align-items-center mt-3">
+                                <img src="assets/client2.webp" alt="Client" class="rounded-circle me-3" width="50" loading="lazy">
+                                <div>
+                                    <h6 class="mb-0">Margaret Atieno</h6>
+                                    <small class="text-muted">Client</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="mb-3 text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="fst-italic">"We've worked with Harry on multiple real estate transactions. His knowledge of Kenyan property law is exceptional and he always protects our interests. The due diligence they conduct is thorough and has saved us from bad investments."</p>
+                            <div class="d-flex align-items-center mt-3">
+                                <img src="assets/client3.webp" alt="Client" class="rounded-circle me-3" width="50" loading="lazy">
+                                <div>
+                                    <h6 class="mb-0">Peter & Jane Waweru</h6>
+                                    <small class="text-muted">Property Investors</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
+                    <h2 class="fw-bold mb-4">Contact Our Nairobi Office</h2>
+                    <p class="lead">Schedule a consultation with our legal team today.</p>
+                    
+                    <div class="mb-4">
+                        <h5><i class="fas fa-map-marker-alt me-2 text-primary"></i> Office Address</h5>
+                        <p>12th Floor, Anniversary Towers<br>University Way, Nairobi, Kenya</p>
+                        <a href="https://maps.google.com" class="btn btn-sm btn-outline-primary">Get Directions</a>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5><i class="fas fa-phone me-2 text-primary"></i> Phone</h5>
+                        <p>+254 700 123 456 (Office)<br>+254 733 987 654 (Emergency)</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5><i class="fas fa-envelope me-2 text-primary"></i> Email</h5>
+                        <p>info@harrybrownlaw.co.ke (General)<br>harry@harrybrownlaw.co.ke (Direct)</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5><i class="fas fa-clock me-2 text-primary"></i> Working Hours</h5>
+                        <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00 PM<br>Emergency services available 24/7</p>
+                    </div>
+                    
+                    <div class="payment-methods mt-4">
+                        <h5><i class="fas fa-money-bill-wave me-2 text-primary"></i> Payment Methods</h5>
+                        <div class="d-flex gap-2 mt-2">
+                            <img src="assets/mpesa-logo.webp" alt="M-Pesa" height="30" loading="lazy">
+                            <img src="assets/airtel-money-logo.webp" alt="Airtel Money" height="30" loading="lazy">
+                            <img src="assets/visa-logo.webp" alt="Visa" height="30" loading="lazy">
+                            <img src="assets/mastercard-logo.webp" alt="Mastercard" height="30" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="card shadow">
+                        <div class="card-body p-4">
+                            <h3 class="card-title text-dark mb-4">Schedule a Legal Consultation</h3>
+                            <form id="legalConsultationForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Full Name *</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">ID/Passport Number</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Email *</label>
+                                        <input type="email" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Phone *</label>
+                                        <input type="tel" class="form-control" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Legal Matter *</label>
+                                        <select class="form-select" required>
+                                            <option value="" disabled selected>Select matter type</option>
+                                            <option>Business/Corporate</option>
+                                            <option>Civil Litigation</option>
+                                            <option>Criminal Defense</option>
+                                            <option>Family Law</option>
+                                            <option>Real Estate</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Case Details *</label>
+                                        <textarea class="form-control" rows="4" required></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="disclaimerCheck" required>
+                                            <label class="form-check-label small" for="disclaimerCheck">
+                                                I understand that submitting this form does not create an attorney-client relationship
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary w-100">
+                                            <i class="fas fa-paper-plane me-2"></i>Send Legal Inquiry
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <h5 class="mb-3">Emergency Legal Assistance</h5>
+                                <a href="tel:+254733987654" class="btn btn-danger w-100">
+                                    <i class="fas fa-phone-alt me-2"></i>Emergency: +254 733 987 654
+                                </a>
+                                <p class="small mt-2 mb-0">Available 24 hours for urgent legal matters</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="text-warning mb-4">Harry Brown & Associates</h5>
+                    <p>Providing exceptional legal services in Nairobi since 2015. Committed to justice, integrity, and client success.</p>
+                    
+                    <div class="compliance-badges d-flex flex-wrap gap-3 my-4">
+                        <img src="assets/lsk-badge.webp" alt="Law Society of Kenya Member" loading="lazy">
+                        <img src="assets/kipi-badge.webp" alt="Data Protection Compliant" loading="lazy">
+                        <img src="assets/sk-badge.webp" alt="Stamp of the Kenyan Judiciary" loading="lazy">
+                    </div>
+                    
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
+                    <h5 class="text-warning mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white">Home</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white">About</a></li>
+                        <li class="mb-2"><a href="#services" class="text-white">Services</a></li>
+                        <li class="mb-2"><a href="#team" class="text-white">Team</a></li>
+                        <li class="mb-2"><a href="#testimonials" class="text-white">Testimonials</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
+                    <h5 class="text-warning mb-4">Practice Areas</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white">Corporate & Commercial Law</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Litigation & Dispute Resolution</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Real Estate & Property Law</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Family Law</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Constitutional Law</a></li>
+                        <li class="mb-2"><a href="#" class="text-white">Criminal Defense</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-4 col-lg-3">
+                    <div class="client-portal-box bg-dark p-3 rounded mb-4">
+                        <h5 class="text-warning mb-3">Existing Clients</h5>
+                        <a href="#" class="btn btn-outline-warning w-100 mb-2">
+                            <i class="fas fa-file-contract me-2"></i>Case Documents
+                        </a>
+                        <a href="#" class="btn btn-outline-light w-100">
+                            <i class="fas fa-calendar-check me-2"></i>Schedule Meeting
+                        </a>
+                    </div>
+                    
+                    <h5 class="text-warning mb-3">Newsletter</h5>
+                    <p>Subscribe for Kenyan legal updates and insights.</p>
+                    <form class="mb-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <hr class="my-4">
+            
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small mb-0">&copy; 2025 Harry Brown & Associates. All rights reserved. 
+                        <span class="d-block d-md-inline mt-2 mt-md-0">
+                            Built with ❤️ by <a href="https://www.kreativecreations.co.ke" target="_blank" class="text-white">Edison Otieno</a>
+                        </span>
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small mb-0">
+                        <a href="#" class="text-white" data-bs-toggle="modal" data-bs-target="#legalDisclaimer">Legal Disclaimer</a> | 
+                        <a href="privacy.html" class="text-white">Privacy Policy</a> | 
+                        <a href="terms.html" class="text-white">Terms of Service</a> | 
+                        <a href="sitemap.html" class="text-white">Sitemap</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Legal Disclaimer Modal -->
+    <div class="modal fade" id="legalDisclaimer" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Legal Disclaimer</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body small">
+                    <p>The information on this website is for general informational purposes only and does not constitute legal advice. The content may not reflect current legal developments or apply to your specific situation.</p>
+                    <p>Viewing this website or contacting Harry Brown & Associates through this site does not create an attorney-client relationship. Please consult directly with qualified legal counsel for advice regarding your individual situation.</p>
+                    <p>Harry Brown & Associates is a registered law firm in Kenya under the Advocates Act (Cap. 16). Our advocates are duly licensed to practice law in the Republic of Kenya.</p>
+                    <p>We do not guarantee the accuracy or completeness of any information on this site, and we disclaim all liability for actions taken or not taken based on this content.</p>
+                    <p>The firm does not necessarily endorse, and is not responsible for, any third-party content that may be accessed through this website.</p>
+                    <p>Prior results do not guarantee a similar outcome in future representation.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">I Understand</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <a href="swahili.html" class="btn btn-sm btn-outline-primary">
+            <i class="fas fa-language"></i> Kiswahili
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Form submission handler
+        document.getElementById('legalConsultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            alert('Thank you for your inquiry. We will contact you shortly.');
+            this.reset();
+        });
+        
+        // Initialize dropdown hover effect (desktop only)
+        if (window.innerWidth > 991) {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function() {
+                    this.querySelector('.dropdown-toggle').click();
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    this.querySelector('.dropdown-toggle').click();
+                });
+            });
+        }
+    </script>
+    
+    <!-- Live Chat Integration -->
+    <script>
+        window.__lc = window.__lc || {};
+        window.__lc.license = 1234567;
+        (function() {
+            var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+            lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+        })();
+    </script>
+</body>
+</html>
